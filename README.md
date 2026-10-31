@@ -1,75 +1,56 @@
-# React + TypeScript + Vite
+# Currency Converter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple USD/IRR currency converter built with React and TypeScript.
 
-Currently, two official plugins are available:
+## Project Status
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Initial setup complete. Implementation in progress.
 
-## React Compiler
+## Design
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The interface was designed in Figma before implementation.
+[View the Figma design](https://www.figma.com/design/2Zvzg4WlxPNQD21CyuOgcn/Currency-Converter?node-id=2008-239)
 
-## Expanding the ESLint configuration
+<details>
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+<summary>View all design screens</summary>
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Desktop
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+![Persian desktop design](docs/design/PersianCurrencyConverter-Form-Desktop.png)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+![English desktop design](docs/design/EnglishCurrencyConverter-Form-Desktop.png)
 
+### Tablet
+
+![Persian tablet design](docs/design/PersianCurrencyConverter-Form-Tablet.png)
+
+![English tablet design](docs/design/EnglishCurrencyConverter-Form-Tablet.png)
+
+### Mobile
+
+![Persian mobile design](docs/design/PersianCurrencyConverter-Form-Mobile.png)
+
+![English mobile design](docs/design/EnglishCurrencyConverter-Form-Mobile.png)
+
+</details>
+
+## Getting Started
+
+Install dependencies:
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Start the development server:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+npm run dev
+```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Create a production build:
 
+```bash
+npm run build
 ```
