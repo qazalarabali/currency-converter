@@ -9,11 +9,11 @@ Initial setup complete. Implementation in progress.
 ## Design
 
 The interface was designed in Figma before implementation.
-[View the Figma design](https://www.figma.com/design/2Zvzg4WlxPNQD21CyuOgcn/Currency-Converter?node-id=2008-239)
+[View the Figma design](https://www.figma.com/design/2Zvzg4WlxPNQD21CyuOgcn/Currency-Converter?-id=2008-239)
 
-<details>
 
-<summary>View all design screens</summary>
+
+View all design screens
 
 ### Desktop
 
@@ -33,7 +33,7 @@ The interface was designed in Figma before implementation.
 
 ![English mobile design](docs/design/EnglishCurrencyConverter-Form-Mobile.png)
 
-</details>
+
 
 ## Getting Started
 
