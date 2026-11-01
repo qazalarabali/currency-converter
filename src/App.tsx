@@ -1,4 +1,5 @@
 import './App.css'
+import Converter from './components/Converter'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
               نرخ دلار را وارد کنید؛ نتیجه همزمان با تایپ نمایش داده می‌شود.
           </p>
         </div>
+        <Converter/>
       </main>
     </div>
   )
