@@ -1,4 +1,4 @@
-.page{
+.page {
   min-height: 100vh;
   min-height: 100dvh;
   display: flex;
@@ -6,7 +6,7 @@
   padding-inline: clamp(1.25rem, 5.7vw - 0.15rem, 5rem);
 }
 
-.header{
+.header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -24,7 +24,7 @@
   font-weight: 700;
 }
 
-.main{
+.main {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -33,13 +33,13 @@
   padding-bottom: clamp(1rem, 0.6rem + 1.5vw, 2rem);
 }
 
-.intro{
+.intro {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.intro_title{
+.intro_title {
   margin: 0;
   font-size: clamp(1.625rem, 1rem + 2.5vw, 3.25rem);
   font-weight: 800;
@@ -47,7 +47,7 @@
   letter-spacing: -0.01em;
 }
 
-.intro_text{
+.intro_text {
   margin: 0;
   font-size: clamp(0.875rem, 0.78rem + 0.4vw, 1.125rem);
   line-height: 1.7;
@@ -76,4 +76,199 @@
   font-size: 13px;
   font-weight: 500;
   color: var(--color-muted);
+}
+
+.field_box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+
+.field_box:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: var(--focus-ring);
+}
+
+.field_box_rate {
+  height: 48px;
+  gap: 8px;
+  padding-inline: 14px;
+  border-color: var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg);
+}
+
+.field_box_amount {
+  height: 64px;
+  padding-inline: 16px 8px;
+}
+
+.field_input {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+
+.field_input::placeholder {
+  color: var(--color-placeholder);
+}
+
+.field_input_rate {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.field_input_amount {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.field_unit {
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.currency {
+  flex-shrink: 0;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding-inline: 12px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.currency_light {
+  background-color: var(--color-surface);
+}
+
+.currency_name {
+  font-weight: 400;
+  color: var(--color-muted);
+}
+
+.swap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.swap::before, .swap::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-border);
+}
+
+.swap_button {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.swap_button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.result {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-inline: 16px 8px;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-primary-soft);
+}
+
+.result_value {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.result_hint {
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.converter_note {
+  margin: 4px 0 0;
+  padding-top: 14px;
+  border-top: 1px dashed var(--color-border);
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--color-note);
+}
+
+/* Mobile */
+@media (max-width: 359px) {
+  .currency_name {
+    display: none;
+  }
+
+  .field_input_amount {
+    font-size: 22px;
+  }
+
+  .result_value {
+    font-size: 24px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 640px) {
+  .main {
+    align-items: center;
+  }
+
+  .intro {
+    max-width: 520px;
+    text-align: center;
+  }
+
+  .converter {
+    max-width: 480px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .main {
+    flex-direction: row;
+    gap: clamp(4rem, 8vw, 7.5rem);
+  }
+
+  .intro {
+    flex: 0 1 500px;
+    text-align: start;
+  }
+
+  .converter {
+    flex-shrink: 0;
+    max-width: 440px;
+  }
 }

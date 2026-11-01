@@ -1,14 +1,34 @@
+function convertToEnglishDigits(value: string): string {
+  return value
+    .replace(/[۰-۹]/g, (digit) => String("۰۱۲۳۴۵۶۷۸۹".indexOf(digit)))
+    .replace(/[٠-٩]/g, (digit) => String("٠١٢٣٤٥٦٧٨٩".indexOf(digit)));
+}
+
+function cleanNumber(value: string): string {
+  const normalized = convertToEnglishDigits(value)
+    .replace(/٫/g, ".")
+    .replace(/[^0-9.]/g, "");
+
+  return normalized;
+}
+
+function formatNumber(value: number, maxDecimals = 0): string {
+  return new Intl.NumberFormat("fa-IR", {
+    maximumFractionDigits: maxDecimals,
+  }).format(value);
+}
+
 function Converter() {
   return (
     <section className="converter">
       <div className="field">
         <label className="field_label" htmlFor="rate">
-          نرخ هر واحد دلار
+          نرخ واحد دلار
         </label>
-        <div className="field_box field_box--rate">
+        <div className="field_box field_box_rate">
           <input
             id="rate"
-            className="field_input field_input--rate"
+            className="field_input field_input_rate"
             type="text"
             inputMode="decimal"
             autoComplete="off"
@@ -22,10 +42,10 @@ function Converter() {
           مبلغ به دلار
         </label>
 
-        <div className="field_box field_box--amount">
+        <div className="field_box field_box_amount">
           <input
             id="amount"
-            className="field_input field_input--amount"
+            className="field_input field_input_amount"
             type="text"
             inputMode="decimal"
             autoComplete="off"
@@ -52,11 +72,9 @@ function Converter() {
         <span className="field_label">معادل</span>
 
         <div className="result">
-          <output className="result_value" aria-live="polite">
-            —
-          </output>
+          <output className="result_value">—</output>
 
-          <span className="currency currency--light">
+          <span className="currency currency_light">
             IRR
             <span className="currency_name">ریال</span>
           </span>
