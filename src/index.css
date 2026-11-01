@@ -1,14 +1,63 @@
-:root {
+:root{
+  --color-bg: #f4f7f6;
+  --color-surface: #ffffff;
+  --color-text: #0f1a17;
+  --color-muted: #56635e;
+  --color-note: #5e6b66;
+  --color-placeholder: #8a9792;
+  --color-border: #e1e8e5;
+  --color-border-strong: #d5e0db;
+  --color-primary: #0b6e4f;
+  --color-primary-dark: #0b5a41;
+  --color-primary-soft: #e8f3ee;
+  --color-primary-border: #cfe0d9;
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
+* {
   box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  font-family: "Vazirmatn", sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/Vazirmatn-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/Vazirmatn-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/Vazirmatn-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/Vazirmatn-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
 }
