@@ -9,7 +9,6 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding-block: clamp(1rem, 0.6rem + 1.5vw, 2rem);
 }
 

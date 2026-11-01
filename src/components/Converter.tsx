@@ -7,11 +7,12 @@ function convertToEnglishDigits(value: string): string {
 }
 
 function cleanNumber(value: string): string {
-  const normalized = convertToEnglishDigits(value)
+  //   const normalized = convertToEnglishDigits(value)
+  return convertToEnglishDigits(value)
     .replace(/٫/g, ".")
     .replace(/[^0-9.]/g, "");
 
-  return normalized;
+  //   return normalized;
 }
 
 function formatNumber(value: number, maxDecimals = 0): string {
@@ -54,7 +55,6 @@ function Converter() {
 
   if (canConvert && !isUsdToIrr) {
     resultText = formatNumber(result, 2);
-    // hintText = `هر ۱ دلار = ${formatNumber(rateNumber)} ریال`;
   }
 
   function handleSwap() {
@@ -91,10 +91,6 @@ function Converter() {
         </div>
       </div>
       <div className="field">
-        {/* <label className="field_label" htmlFor="amount">
-          مبلغ به دلار
-        </label> */}
-
         <label className="field_label" htmlFor="amount">
           {isUsdToIrr ? "مبلغ به دلار" : "مبلغ به ریال"}
         </label>
@@ -139,10 +135,6 @@ function Converter() {
 
         <div className="result">
           <output className="result_value">{resultText}</output>
-          {/* <span className="currency currency_light">
-            IRR
-            <span className="currency_name">ریال</span>
-          </span> */}
           <span className="currency currency_light">
             {isUsdToIrr ? "IRR" : "USD"}
             <span className="currency_name">

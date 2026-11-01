@@ -10,7 +10,6 @@
   --color-primary: #0b6e4f;
   --color-primary-dark: #0b5a41;
   --color-primary-soft: #e8f3ee;
-  --color-primary-border: #cfe0d9;
 
   --radius-sm: 10px;
   --radius-md: 12px;
@@ -35,9 +34,7 @@ body {
 }
 
 button,
-input,
-select,
-textarea {
+input {
   font: inherit;
   color: inherit;
 }
