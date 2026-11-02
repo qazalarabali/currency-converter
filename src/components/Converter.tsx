@@ -7,12 +7,7 @@ function convertToEnglishDigits(value: string): string {
 }
 
 function cleanNumber(value: string): string {
-  //   const normalized = convertToEnglishDigits(value)
-  return convertToEnglishDigits(value)
-    .replace(/٫/g, ".")
-    .replace(/[^0-9.]/g, "");
-
-  //   return normalized;
+  return convertToEnglishDigits(value).replace(/٫/g, ".");
 }
 
 function formatNumber(value: number, maxDecimals = 0): string {
@@ -83,9 +78,15 @@ function Converter() {
             inputMode="decimal"
             autoComplete="off"
             placeholder="نرخ دلار را وارد کنید."
-            /* set beshe !!!!*/
             value={rate}
-            onChange={(event) => setRate(cleanNumber(event.target.value))}
+            // onChange={(event) => setRate(cleanNumber(event.target.value))}
+            onChange={(event) => {
+              const value = cleanNumber(event.target.value);
+
+              if (/^\d*\.?\d*$/.test(value)) {
+                setRate(value);
+              }
+            }}
           />
           <span className="field_unit">ریال</span>
         </div>
@@ -103,15 +104,16 @@ function Converter() {
             inputMode="decimal"
             autoComplete="off"
             placeholder="۰"
-            /* set beshe !!!!*/
             value={amount}
-            onChange={(event) => setAmount(cleanNumber(event.target.value))}
-          />
+            // onChange={(event) => setAmount(cleanNumber(event.target.value))}
+            onChange={(event) => {
+              const value = cleanNumber(event.target.value);
 
-          {/* <span className="currency">
-            USD
-            <span className="currency_name">دلار</span>
-          </span> */}
+              if (/^\d*\.?\d*$/.test(value)) {
+                setAmount(value);
+              }
+            }}
+          />
           <span className="currency">
             {isUsdToIrr ? "USD" : "IRR"}
             <span className="currency_name">
