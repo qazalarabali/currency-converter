@@ -21,8 +21,6 @@ The exchange rate is entered in IRR per USD and is not updated automatically.
 
 The interface and icons were designed in Figma before implementation.
 
-[View the Figma design](https://www.figma.com/design/2Zvzg4WlxPNQD21CyuOgcn/Currency-Converter?node-id=0-1)
-
 ### Desktop
 
 ![Persian desktop design](docs/design/PersianCurrencyConverter-Form-Desktop.png)
@@ -93,7 +91,7 @@ npm run preview
 ## Resources and Tools
 
 - **Vazirmatn:** Downloaded from [Fontfa](https://fontfa.com/font/vazirmatn/).
-- **[Figma](https://www.figma.com/design/2Zvzg4WlxPNQD21CyuOgcn/Currency-Converter?node-id=0-1):** Used to design the interface and create the icons.
+- **[Figma]:** Used to design the interface and create the icons.
 - **Dribbble:** Used for design inspiration. Reference links are listed above.
 - **ChatGPT:** Used as a supporting tool for coding guidance and troubleshooting.
 
